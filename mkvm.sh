@@ -17,6 +17,7 @@ sudo apt-get -y install okular
 sudo apt-get -y upgrade graphviz
 sudo apt-get -y install texlive
 sudo apt-get -y install doxygen
+sudo apt-get -y install firefox
 
 sudo pip install robotframework
 sudo pip install prospector[with_frosted]
