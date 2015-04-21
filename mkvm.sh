@@ -10,6 +10,8 @@ sudo apt-get -y install git
 sudo apt-get -y install nedit
 sudo apt-get -y install python-numpy	# Contains, amongst other things, f2py
 sudo apt-get -y install python-dev	# For Python.h; required by f2py
+sudo apt-get -y install python-matplotlib
+sudo apt-get -y install python-scipy
 sudo apt-get -y install gfortran
 sudo apt-get -y install python-pip	# So we can install Robot Framework
 sudo apt-get -y install python-matplotlib
