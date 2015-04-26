@@ -1,2 +1,2 @@
 # mkvm
-Set up an Ubuntu Virtual Machine
+Set up the initial software stack on an Ubuntu Virtual Machine
