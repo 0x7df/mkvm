@@ -37,6 +37,10 @@ echo "
 export PYTHONSTARTUP=\"${HOME}/.pythonrc.py\"
 " >> ${HOME}/.bashrc
 
+# Put the .gitconfig file in the right place and open it up for editing
+mv --no-clobber ./.gitconfig_template ~/.gitconfig
+git config --global --edit
+
 # If Java JDK is required, determine the path:
 #   > update-alternatives --config java
 # Set JAVA_HOME=/usr/bin/java (or wherever) in /etc/environment, which is the preferred location for JAVA_HOME or any system variable.
