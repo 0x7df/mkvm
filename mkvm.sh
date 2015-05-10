@@ -33,6 +33,9 @@ sudo apt-get -y install julia
 # python-scipy
 # matplotlib
 
+git config --system core.editor nedit
+git config --global --edit
+
 # If Java JDK is required, determine the path:
 #   > update-alternatives --config java
 # Set JAVA_HOME=/usr/bin/java (or wherever) in /etc/environment, which is the preferred location for JAVA_HOME or any system variable.
