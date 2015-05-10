@@ -30,8 +30,12 @@ sudo add-apt-repository ppa:staticfloat/juliareleases
 sudo add-apt-repository ppa:staticfloat/julia-deps
 sudo apt-get -y install julia
 
-# python-scipy
-# matplotlib
+touch ${HOME}/.pythonrc.py
+
+echo "
+# Set Python startup file location in PYTHONSTARTUP environment variable
+export PYTHONSTARTUP=\"${HOME}/.pythonrc.py\"
+" >> ${HOME}/.bashrc
 
 # If Java JDK is required, determine the path:
 #   > update-alternatives --config java
