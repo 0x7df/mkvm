@@ -33,7 +33,8 @@ sudo apt-get -y install julia
 # python-scipy
 # matplotlib
 
-git config --system core.editor nedit
+# Put the .gitconfig file in the right place and open it up for editing
+mv --no-clobber ./.gitconfig_template ~/.gitconfig
 git config --global --edit
 
 # If Java JDK is required, determine the path:
