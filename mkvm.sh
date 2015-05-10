@@ -32,13 +32,16 @@ sudo apt-get -y install julia
 
 touch ${HOME}/.pythonrc.py
 
+# Put the .pythonrc.py file in the right place and set up the PYTHONSTARTUP
+# environment variable
 echo "
 # Set Python startup file location in PYTHONSTARTUP environment variable
 export PYTHONSTARTUP=\"${HOME}/.pythonrc.py\"
 " >> ${HOME}/.bashrc
+mv --no-clobber ./.pythonrc.py_template ${HOME}/.pythonrc.py
 
 # Put the .gitconfig file in the right place and open it up for editing
-mv --no-clobber ./.gitconfig_template ~/.gitconfig
+mv --no-clobber ./.gitconfig_template ${HOME}/.gitconfig
 git config --global --edit
 
 # If Java JDK is required, determine the path:
