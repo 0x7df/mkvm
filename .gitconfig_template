@@ -9,3 +9,5 @@ up = rebase
 ci = commit
 [core]
 editor = vim
+[push]
+    default = simple
