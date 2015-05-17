@@ -8,4 +8,4 @@ br = branch
 up = rebase
 ci = commit
 [core]
-editor = nedit
+editor = vim

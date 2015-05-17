@@ -13,13 +13,13 @@ sudo apt-get -y install python-dev	# For Python.h; required by f2py
 sudo apt-get -y install python-matplotlib
 sudo apt-get -y install python-scipy
 sudo apt-get -y install gfortran
-sudo apt-get -y install python-pip	# So we can install Robot Framework
-sudo apt-get -y install python-matplotlib
+sudo apt-get -y install python-pip
 sudo apt-get -y install okular
 sudo apt-get -y upgrade graphviz
 sudo apt-get -y install texlive
 sudo apt-get -y install doxygen
 sudo apt-get -y install firefox
+sudo apt-get -y install vim-gnome
 
 sudo pip install robotframework
 sudo pip install prospector[with_frosted]
@@ -30,7 +30,6 @@ sudo add-apt-repository ppa:staticfloat/juliareleases
 sudo add-apt-repository ppa:staticfloat/julia-deps
 sudo apt-get -y install julia
 
-touch ${HOME}/.pythonrc.py
 
 # Put the .pythonrc.py file in the right place and set up the PYTHONSTARTUP
 # environment variable
@@ -38,11 +37,14 @@ echo "
 # Set Python startup file location in PYTHONSTARTUP environment variable
 export PYTHONSTARTUP=\"${HOME}/.pythonrc.py\"
 " >> ${HOME}/.bashrc
-mv --no-clobber ./.pythonrc.py_template ${HOME}/.pythonrc.py
+cp ./.pythonrc.py_template ${HOME}/.pythonrc.py
 
 # Put the .gitconfig file in the right place and open it up for editing
-mv --no-clobber ./.gitconfig_template ${HOME}/.gitconfig
+cp ./.gitconfig_template ${HOME}/.gitconfig
 git config --global --edit
+
+# Put the .vimrc file in the right place
+cp ./.vimrc_template ${HOME}/.vimrc
 
 # If Java JDK is required, determine the path:
 #   > update-alternatives --config java

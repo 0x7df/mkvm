@@ -1,0 +1,12 @@
+:filetype on
+:autocmd FileType c,cpp :set cindent
+:syntax on
+:set smartindent
+:set hlsearch
+:set incsearch
+:set number
+:set expandtab
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=0
+:set textwidth=80
