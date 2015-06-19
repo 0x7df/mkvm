@@ -30,6 +30,7 @@ sudo add-apt-repository ppa:staticfloat/juliareleases
 sudo add-apt-repository ppa:staticfloat/julia-deps
 sudo apt-get -y install julia
 
+sudo apt-get autoremove
 
 # Put the .pythonrc.py file in the right place and set up the PYTHONSTARTUP
 # environment variable
