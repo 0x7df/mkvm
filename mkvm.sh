@@ -26,11 +26,11 @@ sudo pip install prospector[with_frosted]
 sudo pip install prospector[with_pyroma]
 sudo pip install prospector[with_vulture]
 
-sudo add-apt-repository ppa:staticfloat/juliareleases
-sudo add-apt-repository ppa:staticfloat/julia-deps
+sudo add-apt-repository -y ppa:staticfloat/juliareleases
+sudo add-apt-repository -y ppa:staticfloat/julia-deps
 sudo apt-get -y install julia
 
-sudo apt-get autoremove
+sudo apt-get -y autoremove
 
 # Put the .pythonrc.py file in the right place and set up the PYTHONSTARTUP
 # environment variable
@@ -46,6 +46,10 @@ git config --global --edit
 
 # Put the .vimrc file in the right place
 cp ./.vimrc_template ${HOME}/.vimrc
+
+# Set up a few things
+mkdir -p ${HOME}/bin
+sudo mkdir -p /mnt/Programming
 
 # If Java JDK is required, determine the path:
 #   > update-alternatives --config java
