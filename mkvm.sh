@@ -32,20 +32,26 @@ sudo apt-get -y install julia
 
 sudo apt-get -y autoremove
 
-# Put the .pythonrc.py file in the right place and set up the PYTHONSTARTUP
-# environment variable
-echo "
-# Set Python startup file location in PYTHONSTARTUP environment variable
-export PYTHONSTARTUP=\"${HOME}/.pythonrc.py\"
-" >> ${HOME}/.bashrc
-cp ./.pythonrc.py_template ${HOME}/.pythonrc.py
+# Standard .bashrc and Python startup
+[ -s ${HOME}/.bashrc ] || cp ./.bashrc_template ${HOME}/.bashrc
+
+# Check for PYTHONSTARTUP
+grep "export PYTHONSTARTUP" ${HOME}/.bashrc 2>&1 > /dev/null
+if [ "$?" -ne 0 ] ; then
+    echo "" >> ${HOME}/.bashrc
+    echo "# Set Python startup file location in PYTHONSTARTUP environment variable" >> ${HOME}/.bashrc
+    echo "export PYTHONSTARTUP=\"/home/x7df/.pythonrc.py\"" >> ${HOME}/.bashrc
+fi
+
+# Put the .pythonrc.py file in the right place 
+[ -s ${HOME}/.pythonrc.py ] || cp ./.pythonrc.py_template ${HOME}/.pythonrc.py
 
 # Put the .gitconfig file in the right place and open it up for editing
-cp ./.gitconfig_template ${HOME}/.gitconfig
+[ -s ${HOME}/.gitconfig ] || cp ./.gitconfig_template ${HOME}/.gitconfig
 git config --global --edit
 
 # Put the .vimrc file in the right place
-cp ./.vimrc_template ${HOME}/.vimrc
+[ -s ${HOME}/.vimrc ] || cp ./.vimrc_template ${HOME}/.vimrc
 
 # Set up a few things
 mkdir -p ${HOME}/bin
