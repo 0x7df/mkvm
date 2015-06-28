@@ -30,6 +30,8 @@ sudo add-apt-repository -y ppa:staticfloat/juliareleases
 sudo add-apt-repository -y ppa:staticfloat/julia-deps
 sudo apt-get -y install julia
 
+sudo apt-get -y install dos2unix
+
 sudo apt-get -y autoremove
 
 # Standard .bashrc and Python startup

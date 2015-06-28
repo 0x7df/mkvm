@@ -10,3 +10,4 @@
 :set smarttab
 :set softtabstop=0
 :set textwidth=80
+iabbrev _istd #include <stdio.h><CR>
