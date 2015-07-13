@@ -9,5 +9,7 @@
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=0
-:set textwidth=80
+:set textwidth=79
+set lines=45 columns=83
 iabbrev _istd #include <stdio.h><CR>
+iabbrev _main main()<CR>{
