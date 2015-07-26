@@ -34,6 +34,7 @@ sudo apt-get -y install julia
 sudo apt-get -y install dos2unix
 
 sudo apt-get -y autoremove
+sudo apt-get -y clean
 
 # Standard .bashrc and Python startup
 [ -s ${HOME}/.bashrc ] || cp ./.bashrc_template ${HOME}/.bashrc
@@ -60,15 +61,3 @@ git config --global --edit
 mkdir -p ${HOME}/bin
 sudo mkdir -p /mnt/Programming
 
-# If Java JDK is required, determine the path:
-#   > update-alternatives --config java
-# Set JAVA_HOME=/usr/bin/java (or wherever) in /etc/environment, which is the preferred location for JAVA_HOME or any system variable.
-
-echo "
-# Now install the Linux Guest Additions for VirtualBox. Go to the
-# \"Devices\" menu of VirtualBox when the VM is running (make sure it is not in
-# stretch mode or the menu bar will not be visible); select \"Insert Guest
-# Additions CD image...\"; then run VBoxLinuxAdditions.run with administrator
-# privileges. Re-boot the VM; after this the VM desktop should resize with the
-# VirtualBox window, rather than being a fixed (small) size.
-"
