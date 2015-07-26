@@ -7,19 +7,20 @@ sudo apt-get -y dist-upgrade            # Does upgrade with intelligent dependen
 sudo apt-get -y install dkms		# For installing VirtualBox Linux Guest Additions (https://www.virtualbox.org/manual/ch04.html)
 
 sudo apt-get -y install git
-sudo apt-get -y install nedit
+sudo apt-get -y gitk
 sudo apt-get -y install python-numpy	# Contains, amongst other things, f2py
 sudo apt-get -y install python-dev	# For Python.h; required by f2py
 sudo apt-get -y install python-matplotlib
 sudo apt-get -y install python-scipy
-sudo apt-get -y install gfortran
 sudo apt-get -y install python-pip
+sudo apt-get -y install gfortran
 sudo apt-get -y install okular
 sudo apt-get -y upgrade graphviz
 sudo apt-get -y install texlive
 sudo apt-get -y install doxygen
 sudo apt-get -y install firefox
 sudo apt-get -y install vim-gnome
+sudo apt-get -y install kdiff3
 
 sudo pip install robotframework
 sudo pip install prospector[with_frosted]
