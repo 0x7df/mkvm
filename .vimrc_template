@@ -1,12 +1,27 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 :filetype on
 :autocmd FileType c,cpp :set cindent
 :syntax on
 :set smartindent
+
+"" Search setting
 :set hlsearch
 :set incsearch
+
 :set number
 :set expandtab
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=0
-:set textwidth=80
+:set textwidth=79
+set lines=45 columns=83
+iabbrev _istd #include <stdio.h><CR>
+iabbrev _main main()<CR>{
+
+nnoremap <Left> :echoe "Use  h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
