@@ -26,6 +26,7 @@ sudo pip install robotframework
 sudo pip install prospector[with_frosted]
 sudo pip install prospector[with_pyroma]
 sudo pip install prospector[with_vulture]
+sudo pip install plotly --upgrade
 
 sudo add-apt-repository -y ppa:staticfloat/juliareleases
 sudo add-apt-repository -y ppa:staticfloat/julia-deps
