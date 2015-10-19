@@ -29,6 +29,7 @@ sudo pip install prospector[with_vulture]
 sudo pip install plotly --upgrade
 sudo pip install markdown # Required for Pelican
 sudo pip install pelican
+sudo pip install typogrify # Required for pelican_plugin-render_math
 
 sudo add-apt-repository -y ppa:staticfloat/juliareleases
 sudo add-apt-repository -y ppa:staticfloat/julia-deps
