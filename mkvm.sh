@@ -27,6 +27,8 @@ sudo pip install prospector[with_frosted]
 sudo pip install prospector[with_pyroma]
 sudo pip install prospector[with_vulture]
 sudo pip install plotly --upgrade
+sudo pip install markdown # Required for Pelican
+sudo pip install pelican
 
 sudo add-apt-repository -y ppa:staticfloat/juliareleases
 sudo add-apt-repository -y ppa:staticfloat/julia-deps
@@ -57,6 +59,13 @@ git config --global --edit
 
 # Put the .vimrc file in the right place
 [ -s ${HOME}/.vimrc ] || cp ./.vimrc_template ${HOME}/.vimrc
+
+# Add the Nest theme for Pelican
+cd /usr/local/lib/python2.7/dist-packages/pelican/themes/ && \
+sudo git clone https://github.com/molivier/nest.git
+
+cd ~ && \
+git clone https://github.com/barrysteyn/pelican_plugin-render_math.git
 
 # Set up a few things
 mkdir -p ${HOME}/bin
