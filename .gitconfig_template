@@ -11,5 +11,8 @@
     unstage = reset HEAD --
 [core]
     editor = vim
+    excludesfile = ~/.gitignore_global
 [push]
     default = simple
+[help]
+    autocorrect = 20
