@@ -29,15 +29,16 @@ apt-get -y install firefox
 apt-get -y install vim-gnome
 apt-get -y install kdiff3
 
-pip install robotframework
-pip install prospector[with_frosted]
-pip install prospector[with_pyroma]
-pip install prospector[with_vulture]
-pip install plotly --upgrade
-pip install markdown # Required for Pelican
-pip install pelican
-pip install ghp-import # Pelican - "make github"
-pip install typogrify # Required for pelican_plugin-render_math
+pip install --upgrade pip
+pip install --upgrade robotframework
+pip install --upgrade prospector[with_frosted]
+pip install --upgrade prospector[with_pyroma]
+pip install --upgrade prospector[with_vulture]
+pip install --upgrade plotly
+pip install --upgrade markdown # Required for Pelican
+pip install --upgrade pelican
+pip install --upgrade ghp-import # Pelican - "make github"
+pip install --upgrade typogrify # Required for pelican_plugin-render_math
 
 add-apt-repository -y ppa:staticfloat/juliareleases
 add-apt-repository -y ppa:staticfloat/julia-deps
