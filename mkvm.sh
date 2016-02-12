@@ -1,45 +1,52 @@
 # mkvm - Make virtual machine
 # This script configures an Ubuntu virtual machine how I like it
 
-sudo apt-get -y update                  # Must be done before upgrade
-sudo apt-get -y dist-upgrade            # Does upgrade with intelligent dependency-handling
+if [ $(whoami) != "root" ] ; then
+    echo ; echo "Run as root:"
+    echo ; echo "    sudo ./mkvm.sh"
+    echo
+    exit 1
+fi
 
-sudo apt-get -y install dkms		# For installing VirtualBox Linux Guest Additions (https://www.virtualbox.org/manual/ch04.html)
+apt-get -y update                  # Must be done before upgrade
+apt-get -y dist-upgrade            # Does upgrade with intelligent dependency-handling
 
-sudo apt-get -y install git
-sudo apt-get -y gitk
-sudo apt-get -y install python-numpy	# Contains, amongst other things, f2py
-sudo apt-get -y install python-dev	# For Python.h; required by f2py
-sudo apt-get -y install python-matplotlib
-sudo apt-get -y install python-scipy
-sudo apt-get -y install python-pip
-sudo apt-get -y install gfortran
-sudo apt-get -y install okular
-sudo apt-get -y upgrade graphviz
-sudo apt-get -y install texlive
-sudo apt-get -y install doxygen
-sudo apt-get -y install firefox
-sudo apt-get -y install vim-gnome
-sudo apt-get -y install kdiff3
+apt-get -y install dkms		# For installing VirtualBox Linux Guest Additions (https://www.virtualbox.org/manual/ch04.html)
 
-sudo pip install robotframework
-sudo pip install prospector[with_frosted]
-sudo pip install prospector[with_pyroma]
-sudo pip install prospector[with_vulture]
-sudo pip install plotly --upgrade
-sudo pip install markdown # Required for Pelican
-sudo pip install pelican
-sudo pip install ghp-import # Pelican - "make github"
-sudo pip install typogrify # Required for pelican_plugin-render_math
+apt-get -y install git
+apt-get -y install gitk
+apt-get -y install python-numpy	# Contains, amongst other things, f2py
+apt-get -y install python-dev	# For Python.h; required by f2py
+apt-get -y install python-matplotlib
+apt-get -y install python-scipy
+apt-get -y install python-pip
+apt-get -y install gfortran
+apt-get -y install okular
+apt-get -y upgrade graphviz
+apt-get -y install texlive
+apt-get -y install doxygen
+apt-get -y install firefox
+apt-get -y install vim-gnome
+apt-get -y install kdiff3
 
-sudo add-apt-repository -y ppa:staticfloat/juliareleases
-sudo add-apt-repository -y ppa:staticfloat/julia-deps
-sudo apt-get -y install julia
+pip install robotframework
+pip install prospector[with_frosted]
+pip install prospector[with_pyroma]
+pip install prospector[with_vulture]
+pip install plotly --upgrade
+pip install markdown # Required for Pelican
+pip install pelican
+pip install ghp-import # Pelican - "make github"
+pip install typogrify # Required for pelican_plugin-render_math
 
-sudo apt-get -y install dos2unix
+add-apt-repository -y ppa:staticfloat/juliareleases
+add-apt-repository -y ppa:staticfloat/julia-deps
+apt-get -y install julia
 
-sudo apt-get -y autoremove
-sudo apt-get -y clean
+apt-get -y install dos2unix
+
+apt-get -y autoremove
+apt-get -y clean
 
 # Standard .bashrc and Python startup
 [ -s ${HOME}/.bashrc ] || cp ./.bashrc_template ${HOME}/.bashrc
@@ -64,14 +71,14 @@ cp ./.gitconfig_template ${HOME}/.gitconfig
 
 # Add the Nest theme for Pelican
 cd /usr/local/lib/python2.7/dist-packages/pelican/themes/ && \
-sudo git clone https://github.com/molivier/nest.git
+git clone https://github.com/molivier/nest.git
 
 cd ~ && \
 git clone https://github.com/barrysteyn/pelican_plugin-render_math.git
 
 # Set up a few things
 mkdir -p ${HOME}/bin
-sudo mkdir -p /mnt/Programming
+mkdir -p /mnt/Programming
 
 # Add user to group vboxsf to get access to auto-mounted shared folders
-sudo usermod -a -G vboxsf $(whoami)
+usermod -a -G vboxsf $(whoami)
