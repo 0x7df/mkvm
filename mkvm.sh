@@ -56,8 +56,8 @@ fi
 [ -s ${HOME}/.pythonrc.py ] || cp ./.pythonrc.py_template ${HOME}/.pythonrc.py
 
 # Put the .gitconfig file in the right place and open it up for editing
-[ -s ${HOME}/.gitconfig ] || cp ./.gitconfig_template ${HOME}/.gitconfig
-git config --global --edit
+[ -s ${HOME}/.gitconfig ] && mv ${HOME}/.gitconfig ./.gitconfig_backup
+cp ./.gitconfig_template ${HOME}/.gitconfig
 
 # Put the .vimrc file in the right place
 [ -s ${HOME}/.vimrc ] || cp ./.vimrc_template ${HOME}/.vimrc

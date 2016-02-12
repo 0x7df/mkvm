@@ -1,13 +1,15 @@
 [user] 
-name = John Smith
-email = john@example.com
+    name = 0x7df
+    email = thf2dts-github@yahoo.com
 [alias]
-st = status
-co = checkout
-br = branch
-up = rebase
-ci = commit
+    st = status
+    co = checkout
+    br = branch
+    up = rebase
+    ci = commit
+    last = log -1 HEAD
+    unstage = reset HEAD --
 [core]
-editor = vim
+    editor = vim
 [push]
     default = simple
