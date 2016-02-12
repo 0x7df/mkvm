@@ -16,3 +16,5 @@
     default = simple
 [help]
     autocorrect = 20
+[diff]
+    submodule = log
