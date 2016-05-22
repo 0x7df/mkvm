@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # mkvm - Make virtual machine
 # This script configures an Ubuntu virtual machine how I like it
 
