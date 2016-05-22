@@ -19,6 +19,7 @@ apt-get -y install doxygen
 apt-get -y install firefox
 apt-get -y install vim-gnome
 apt-get -y install kdiff3
+apt-get -y install shellcheck
 
 pip install --upgrade pip
 pip install --upgrade robotframework
