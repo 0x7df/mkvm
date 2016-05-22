@@ -1,3 +1,4 @@
+#!/bin/bash
 
 apt-get -y update                  # Must be done before upgrade
 apt-get -y dist-upgrade            # Does upgrade with intelligent dependency-handling
@@ -42,5 +43,5 @@ apt-get -y autoremove
 apt-get -y clean
 
 # Add user to group vboxsf to get access to auto-mounted shared folders
-usermod -a -G vboxsf $(whoami)
+usermod -a -G vboxsf "$(whoami)"
 
