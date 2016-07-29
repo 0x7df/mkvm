@@ -30,6 +30,7 @@ pip install --upgrade markdown # Required for Pelican
 pip install --upgrade pelican
 pip install --upgrade ghp-import # Pelican - "make github"
 pip install --upgrade typogrify # Required for pelican_plugin-render_math
+pip install --upgrade awscli # Amazon Web Services CLI
 
 add-apt-repository -y ppa:staticfloat/juliareleases
 add-apt-repository -y ppa:staticfloat/julia-deps

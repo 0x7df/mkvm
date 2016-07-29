@@ -1,5 +1,9 @@
-# Standard .bashrc and Python startup
+# Standard .bashrc
 [ -s ${HOME}/.bashrc ] || cp ./.bashrc_template ${HOME}/.bashrc
+
+# Standard .bash_profile
+[ -s ${HOME}/.bash_profile ] && mv ./.bashrc_profile ./.bash_profile_backup
+cp ./.bash_profile_template ${HOME}/.bash_profile
 
 # Check for PYTHONSTARTUP
 grep "export PYTHONSTARTUP" ${HOME}/.bashrc 2>&1 > /dev/null
@@ -32,4 +36,4 @@ git clone https://github.com/barrysteyn/pelican_plugin-render_math.git
 # Set up a few things
 mkdir -p ${HOME}/bin
 mkdir -p /mnt/Programming
-
+mkdir -p ${HOME}/.aws
