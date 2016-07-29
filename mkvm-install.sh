@@ -1,3 +1,4 @@
+#!/bin/bash
 
 apt-get -y update                  # Must be done before upgrade
 apt-get -y dist-upgrade            # Does upgrade with intelligent dependency-handling
@@ -19,6 +20,7 @@ apt-get -y install doxygen
 apt-get -y install firefox
 apt-get -y install vim-gnome
 apt-get -y install kdiff3
+apt-get -y install shellcheck
 
 pip install --upgrade pip
 pip install --upgrade robotframework
@@ -42,5 +44,5 @@ apt-get -y autoremove
 apt-get -y clean
 
 # Add user to group vboxsf to get access to auto-mounted shared folders
-usermod -a -G vboxsf $(whoami)
+usermod -a -G vboxsf "$(whoami)"
 
